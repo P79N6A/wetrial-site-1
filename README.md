@@ -1,12 +1,12 @@
-# Ant Design Pro Site
+# Wetrial Site
 
-The documentation source of [Ant Design Pro](https://github.com/ant-design/ant-design-pro).
+The documentation source of [wetrial](https://github.com/wetrial/wetrial-site-temp).
 
 ### Development
 
 ```bash
-$ git clone git@github.com:ant-design/ant-design-pro-site.git
-$ cd ant-design-pro-site
+$ git clone git@github.com:wetrial/wetrial-site-temp.git
+$ cd wetrial-site-temp
 $ git submodule init
 $ git submodule update --recursive
 $ npm install
