@@ -18,20 +18,19 @@ branches:
   only:
     - master # 只对 master 分支进行构建
 
-before-deploy:
-  - git config --local user.name "xiexingen"
-  - git config --local user.email "1002275364@qq.com"
+before_deploy:
+- git config --local user.name "xiexingen"
+- git config --local user.email "1002275364@qq.com"
 
 # GitHub Pages 部署
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token:
-    secure: b451fb59c37bd747bf97e8166ffa0a96b8bcb7e1
-  # 将下面的目录中内容推送到 gh-pages 分支
-  local_dir: _site
-  fqdn: $CUSTOM_DOMAIN
-  name: $GIT_NAME
-  email: $GIT_EMAIL
-  on:
-    branch: master
+  - provider: pages
+    skip_cleanup: true
+    local_dir: _site
+    name: Ein Verne
+    email: 1002275364@qq.com
+    verbose: true
+    on:
+      branch: master
+    github_token:
+      secure: b451fb59c37bd747bf97e8166ffa0a96b8bcb7e1
