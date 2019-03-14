@@ -6,3 +6,11 @@ install:
   - npm install
 script: 
   - npm run site
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: b451fb59c37bd747bf97e8166ffa0a96b8bcb7e1  # Set in the settings page of your repository, as a secure variable
+  keep-history: true
+  on:
+    branch: master
