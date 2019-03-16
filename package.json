@@ -1,8 +1,8 @@
 {
-  "name": "wetrial-site-temp",
+  "name": "wetrial-site",
   "version": "2.2.1",
-  "title": "Ant Design Pro",
-  "description": "site of Ant Design Pro",
+  "title": "Wetrial",
+  "description": "site of Wetrial",
   "homepage": "https://wetrial.github.io/wetrial-site-temp",
   "repository": {
     "type": "git",

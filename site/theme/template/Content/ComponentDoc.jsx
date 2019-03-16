@@ -97,7 +97,7 @@ export default class ComponentDoc extends React.PureComponent {
     const { title, subtitle, filename } = meta;
     const isNotTranslated = locale === 'en-US' && typeof title === 'object';
     return (
-      <DocumentTitle title={`${subtitle || ''} ${title[locale] || title} - Ant Design`}>
+      <DocumentTitle title={`${subtitle || ''} ${title[locale] || title} - Wetrial`}>
         <article>
           <Affix
             className="toc-affix"

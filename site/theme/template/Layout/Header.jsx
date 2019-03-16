@@ -123,7 +123,7 @@ class Header extends React.Component {
         <div>
           <img
             src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
-            alt="Ant Design"
+            alt="Wetrial"
           />
           <p>
             {formatMessage({ id: 'app.publish.greeting' })}

@@ -185,7 +185,7 @@ export default class Demo extends React.Component {
       }
     );
     const codepenPrefillConfig = {
-      title: `${localizedTitle} - Ant Design Demo`,
+      title: `${localizedTitle} - Wetrial Demo`,
       html: html,
       js: antdProCodeFormatCodepen(state.sourceCode),
       css: prefillStyleCodepen,
@@ -232,7 +232,7 @@ ${state.sourceCode.replace('mountNode', "document.getElementById('container')")}
     };
 
     const riddlePrefillConfig = {
-      title: `${localizedTitle} - Ant Design Demo`,
+      title: `${localizedTitle} - Wetrial Demo`,
       js: antdProCodeFormat(state.sourceCode),
       css: prefillStyle,
     };
