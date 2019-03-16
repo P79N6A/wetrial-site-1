@@ -3,8 +3,20 @@ const path = require('path');
 const homeTmpl = './template/Home/index';
 const contentTmpl = './template/Content/index';
 
-function pickerGenerator(module = '') {
+function pickerDocsGenerator(module = '') {
   const tester = new RegExp(`^docs/${module}`);
+  return markdownData => {
+    const filename = markdownData.meta.filename;
+    if (tester.test(filename) && !/\/demo$/.test(path.dirname(filename))) {
+      return {
+        meta: markdownData.meta,
+      };
+    }
+  };
+}
+
+function pickerCssGenerator(module = '') {
+  const tester = new RegExp(`^css/${module}`);
   return markdownData => {
     const filename = markdownData.meta.filename;
     if (tester.test(filename) && !/\/demo$/.test(path.dirname(filename))) {
@@ -42,7 +54,8 @@ module.exports = {
         meta: markdownData.meta,
       };
     },
-    docs: pickerGenerator(),
+    docs: pickerDocsGenerator(),
+    css: pickerCssGenerator(),
   },
   plugins: [
     'bisheng-plugin-description',
@@ -61,6 +74,10 @@ module.exports = {
       },
       {
         path: '/docs/:children',
+        component: contentTmpl,
+      },
+      {
+        path: '/css/:children',
         component: contentTmpl,
       },
       {

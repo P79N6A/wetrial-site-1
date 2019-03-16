@@ -24,6 +24,7 @@ module.exports = {
   source: {
     components: './scaffold/src/components',
     docs: './docs',
+    css: './css',
   },
   theme: './site/theme',
   htmlTemplate: './site/theme/static/template.html',

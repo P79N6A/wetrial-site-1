@@ -7,7 +7,7 @@ const deepAssign = require('deep-assign');
 const config = getWebpackConfig(false);
 
 const cwd = process.cwd();
-const filename = 'ant-design-pro';
+const filename = 'wetrial';
 
 const webpackConfig = config[0];
 

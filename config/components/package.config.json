@@ -1,11 +1,11 @@
 {
-  "name": "ant-design-pro",
+  "name": "wetrial-site",
   "version": "1.4.1",
   "description": "An enterprise-class UI design language and React-based implementation",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ant-design/ant-design-pro"
+    "url": "https://github.com/wetrial/wetrial-site"
   },
   "scripts": {
     "create": "./tool/create.js",

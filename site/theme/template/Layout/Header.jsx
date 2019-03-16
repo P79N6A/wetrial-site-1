@@ -136,9 +136,6 @@ class Header extends React.Component {
             </a>
             {formatMessage({ id: 'app.publish.tips' })}
             {formatMessage({ id: 'app.publish.old-version-guide' })}
-            <a target="_blank" rel="noopener noreferrer" href="https://v1.pro.ant.design">
-              v1.pro.ant.design
-            </a>
             {formatMessage({ id: 'app.publish.old-version-tips' })}
           </p>
         </div>
@@ -180,6 +177,8 @@ class Header extends React.Component {
     let activeMenuItem = module || 'home';
     if (/^components/.test(path)) {
       activeMenuItem = 'components';
+    } else if (/css/.test(path)) {
+      activeMenuItem = 'css';
     } else if (/docs/.test(path)) {
       activeMenuItem = 'docs';
     } else if (path === '/') {
@@ -200,23 +199,14 @@ class Header extends React.Component {
             <FormattedMessage id="app.header.menu.docs" />
           </Link>
         </Menu.Item>
+        <Menu.Item key="css">
+          <Link to={getLocalizedPathname('/css/index', isZhCN)}>CSS</Link>
+        </Menu.Item>
         <Menu.Item key="components">
           <Link to={getLocalizedPathname('/components/AvatarList', isZhCN)}>
             <FormattedMessage id="app.header.menu.components" />
           </Link>
         </Menu.Item>
-        <Menu.Item key="v1">
-          <a href="https://v1.pro.ant.design" target="_blank" rel="noopener noreferrer">
-            v1
-          </a>
-        </Menu.Item>
-        {menuMode === 'inline' && (
-          <Menu.Item key="preview">
-            <a target="_blank" href="http://preview.pro.ant.design/" rel="noopener noreferrer">
-              <FormattedMessage id="app.home.preview" />
-            </a>
-          </Menu.Item>
-        )}
       </Menu>,
     ];
 
@@ -229,6 +219,10 @@ class Header extends React.Component {
       ));
     const docSearchOption = searchOption
       .filter(v => v.type === 'doc')
+      .map(d => <Option key={d.url}>{isZhCN ? d.title : d['title-en'] || d.title}</Option>);
+
+    const cssSearchOption = searchOption
+      .filter(v => v.type === 'css')
       .map(d => <Option key={d.url}>{isZhCN ? d.title : d['title-en'] || d.title}</Option>);
 
     const options = [];
@@ -244,6 +238,13 @@ class Header extends React.Component {
       options.push(
         <OptGroup label={intl.formatMessage({ id: 'app.header.search.doc' })} key="doc">
           {docSearchOption}
+        </OptGroup>
+      );
+    }
+    if (cssSearchOption) {
+      options.push(
+        <OptGroup label={intl.formatMessage({ id: 'app.header.search.css' })} key="doc">
+          {cssSearchOption}
         </OptGroup>
       );
     }
@@ -277,8 +278,8 @@ class Header extends React.Component {
             <Link id="logo" to="/">
               <img src={LOGO_URL} alt="logo" />
               <img
-                src="https://gw.alipayobjects.com/zos/rmsportal/tNoOLUAkyuGLXoZvaibF.svg"
-                alt="Ant Design Pro"
+                src="https://gw.alipayobjects.com/zos/rmsportal/DkKNubTaaVsKURhcVGkh.svg"
+                alt="Wetrial"
               />
             </Link>
           </Col>
@@ -306,23 +307,6 @@ class Header extends React.Component {
               </Select>
             </div>
             <div className="header-meta">
-              <div id="preview">
-                <a
-                  id="preview-button"
-                  target="_blank"
-                  href="http://preview.pro.ant.design"
-                  rel="noopener noreferrer"
-                >
-                  <Button icon="eye-o">
-                    <FormattedMessage id="app.home.preview" />
-                  </Button>
-                </a>
-              </div>
-              <div id="lang">
-                <Button onClick={this.handleLangChange}>
-                  <FormattedMessage id="app.header.lang" />
-                </Button>
-              </div>
               {menuMode === 'horizontal' ? <div id="menu">{menu}</div> : null}
             </div>
           </Col>

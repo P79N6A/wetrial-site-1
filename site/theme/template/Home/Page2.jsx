@@ -24,9 +24,9 @@ function Page2() {
             </p>
             <div key="code1" className="home-code">
               <div>
-                $ <span>git clone</span> git@github.com:ant-design/ant-design-pro.git --depth=1
+                $ <span>git clone</span> git@github.com:wetrial/wetrial.git --depth=1
               </div>
-              <div>$ cd ant-design-pro</div>
+              <div>$ cd wetrial</div>
               <div>$ npm install</div>
               <div>
                 $ npm start{' '}
@@ -50,7 +50,7 @@ function Page2() {
                     </Link>
                   ),
                   ask: (
-                    <a href="https://github.com/ant-design/ant-design-pro/issues">
+                    <a href="https://github.com/wetrial/wetrial/issues">
                       <FormattedMessage id="app.home.ask" />
                     </a>
                   ),
@@ -58,11 +58,7 @@ function Page2() {
               />
             </p>
             <div key="button" style={{ marginTop: 88 }}>
-              <a
-                href="http://github.com/ant-design/ant-design-pro"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="http://github.com/wetrial/wetrial" target="_blank" rel="noopener noreferrer">
                 <Button type="primary">
                   <FormattedMessage id="app.home.download" /> Pro
                 </Button>

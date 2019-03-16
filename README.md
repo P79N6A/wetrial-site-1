@@ -1,12 +1,14 @@
-# Wetrial Site
+# wetrial Site
 
-The documentation source of [wetrial](https://github.com/wetrial/wetrial-site-temp).
+> [参考地址](https://github.com/ant-design/ant-design-pro-site)
 
-### Development
+[wetrial](https://github.com/wetrial/wetrial)的使用文档.
+
+### 开发
 
 ```bash
-$ git clone git@github.com:wetrial/wetrial-site-temp.git
-$ cd wetrial-site-temp
+$ git clone git@github.com:wetrial/wetrial-site.git
+$ cd wetrial-site
 $ git submodule init
 $ git submodule update --recursive
 $ npm install
@@ -15,13 +17,13 @@ $ npm start
 
 Then visit http://localhost:8001 .
 
-### Deploy
+### 部署
 
 ```
 $ npm run site
 ```
 
-### Publish Components
+### 发布组件
 
 ```
 $ npm run publish-components

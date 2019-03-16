@@ -27,12 +27,12 @@ function Banner(props) {
         <div key="line" className="title-line-wrapper">
           <div className="title-line" style={{ transform: 'translateX(-64px)' }} />
         </div>
-        <h1 key="h1">ANT DESIGN PRO</h1>
+        <h1 key="h1">Wetrial</h1>
         <p key="content">
           <FormattedMessage id="app.home.slogan" />
         </p>
         <div key="button" className="button-wrapper">
-          <a href="http://preview.pro.ant.design" target="_blank" rel="noopener noreferrer">
+          <a href="http://ant.wetrial.com" target="_blank" rel="noopener noreferrer">
             <Button type="primary">
               <FormattedMessage id="app.home.preview" />
             </Button>
@@ -46,7 +46,7 @@ function Banner(props) {
             key="github-button"
             type="stargazers"
             namespace="ant-design"
-            repo="ant-design-pro"
+            repo="wetrial"
           />
         </div>
       </QueueAnim>

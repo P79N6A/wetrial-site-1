@@ -64,23 +64,25 @@ export default class ComponentDoc extends React.PureComponent {
     const showedDemo = demos.some(demo => demo.meta.only)
       ? demos.filter(demo => demo.meta.only)
       : demos.filter(demo => demo.preview);
-    showedDemo.sort((a, b) => a.meta.order - b.meta.order).forEach((demoData, index) => {
-      const demoElem = (
-        <Demo
-          {...demoData}
-          themeConfig={props.themeConfig}
-          key={demoData.meta.filename}
-          utils={props.utils}
-          expand={expand}
-          location={location}
-        />
-      );
-      if (index % 2 === 0 || isSingleCol) {
-        leftChildren.push(demoElem);
-      } else {
-        rightChildren.push(demoElem);
-      }
-    });
+    showedDemo
+      .sort((a, b) => a.meta.order - b.meta.order)
+      .forEach((demoData, index) => {
+        const demoElem = (
+          <Demo
+            {...demoData}
+            themeConfig={props.themeConfig}
+            key={demoData.meta.filename}
+            utils={props.utils}
+            expand={expand}
+            location={location}
+          />
+        );
+        if (index % 2 === 0 || isSingleCol) {
+          leftChildren.push(demoElem);
+        } else {
+          rightChildren.push(demoElem);
+        }
+      });
 
     const jumper = showedDemo.map(demo => {
       const title = demo.meta.title;
@@ -122,7 +124,7 @@ export default class ComponentDoc extends React.PureComponent {
               message={
                 <span>
                   This article has not been translated, hope that your can PR to translated it.
-                  <a href="https://github.com/ant-design/ant-design-pro/issues/120"> Help us!</a>
+                  <a href="https://github.com/wetrial/wetrial/issues/120"> Help us!</a>
                 </span>
               }
               style={{ marginBottom: 24 }}
@@ -135,7 +137,7 @@ export default class ComponentDoc extends React.PureComponent {
               <EditButton
                 title={<FormattedMessage id="app.content.edit-page" />}
                 filename={filename.replace('scaffold/', '')}
-                sourcePath="https://github.com/ant-design/ant-design-pro/edit/master/"
+                sourcePath="https://github.com/wetrial/wetrial/edit/master/"
               />
             </h1>
             {props.utils.toReactComponent(
